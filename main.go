@@ -1,12 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+import "net/http"
 
 func main() {
-	fmt.Printf("Starting up server")
+	displayStartup()
 	r := mux.NewRouter()
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/products", ProductsHandler)
