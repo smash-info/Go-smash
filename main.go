@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 	displayStartup()
@@ -8,5 +11,8 @@ func main() {
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/products", ProductsHandler)
 	r.HandleFunc("/articles", ArticlesHandler)
+	fmt.Println("/ – is available")
+	fmt.Println("/products – is available")
+	fmt.Println("/articles – is available")
 	http.Handle("/", r)
 }
